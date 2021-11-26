@@ -6,14 +6,14 @@ bool Include(const char* str, const char a, const char b, int i)
     if ((a == str[i] && b == str[i + 1]) ||
         (b == str[i] && a == str[i + 1]))
         return 1;
-    if (str[i] != '\0')
+    if (str[i] != '\0' && str[i + 1] != '\0')
         return Include(str, a, b, i + 1);
     else
         return 0;
 }
 char* Replace(char* R, const char* str, char* s, int i)
 {
-    if (str[i + 1] != 0)
+    if (str[i] != '\0' && str[i + 1] != '\0')
     {
         if ((str[i] == 'S' && str[i + 1] == 'Q') ||
             (str[i] == 'Q' && str[i + 1] == 'S'))
